@@ -1,0 +1,23 @@
+type Phone {
+    id:Int
+    phoneBrand:String
+    phoneName:String
+}
+
+input PhoneInput {
+    id:Int
+    phone_brand:String
+    phone_name:String
+}
+
+
+
+type Query {
+    findAllPhones:[Phone]
+    deletePhone(id:ID): Phone
+}
+
+type Mutation {
+    savePhones(phones:[PhoneInput!]!):[Phone]
+    updatePhone(id: ID!, phoneBrand: String, phoneName: String): Phone!
+}
